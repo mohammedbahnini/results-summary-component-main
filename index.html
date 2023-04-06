@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Results summary component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+  <body>
+    <section class="card">
+      <div class="card-left">
+        <h2 class="title">Your Result</h2>
+        <div class="circle">
+          <div class="circle-content">
+            <h1 class="score">76</h1>
+            <span class="sub-score">of 100</span>
+          </div>
+        </div>
+        <div class="footer">
+          <h3 class="footer-title">Great</h3>
+          <p class="footer-text">
+            You scored higher than 65% of the people who have taken these tests.
+          </p>
+        </div>
+      </div>
+      <div class="card-right">
+        <h3 class="title">Summary</h3>
+        <ul class="items">
+          <li class="item item-reaction">
+            <div class="title">
+              <img src="assets/images/icon-reaction.svg" alt="Reaction" />
+              Reaction
+            </div>
+            <div class="content"><span>80 / </span>100</div>
+          </li>
+          <li class="item item-memory">
+            <div class="title">
+              <img src="assets/images/icon-memory.svg" alt="Memory" />
+              Memory
+            </div>
+            <div class="content"><span>92 / </span>100</div>
+          </li>
+          <li class="item item-verbal">
+            <div class="title">
+              <img src="assets/images/icon-verbal.svg" alt="Verbal" />
+              Verbal
+            </div>
+            <div class="content"><span>61 / </span>100</div>
+          </li>
+          <li class="item item-visual">
+            <div class="title">
+              <img src="assets/images/icon-visual.svg" alt="Viusal" />
+              Viusal
+            </div>
+            <div class="content"><span>72 / </span>100</div>
+          </li>
+        </ul>
+        <button>Continue</button>
+      </div>
+    </section>
+  </body>
+
+  <script>
+    window.addEventListener("load", () => {
+      const items = document.querySelectorAll(".items .item");
+      items.forEach((item, index) => {
+        item.classList.add("visible");
+        item.style.transitionDelay = `${index * 0.1}s`;
+      });
+    });
+  </script>
+</html>
